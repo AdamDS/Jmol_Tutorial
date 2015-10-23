@@ -1,3 +1,7 @@
+#####
+#	author: Adam D Scott (AdamDS - adam@adamscottphd.com)
+#	first created: 2015*10*21
+#####
 load http://www.rcsb.org/pdb/files/1ZAA.pdb; #loads PDB structure 1ZAA
 background white; #sets the background to white (optional)
 backbone only; #shows only alpha carbon backbone

@@ -1,3 +1,7 @@
+#####
+#	author: Adam D Scott (AdamDS - adam@adamscottphd.com)
+#	first created: 2015*10*21
+#####
 ## Get Jmol/JSmol
 #(read carefully before you click ANYTHING on sourceforge pages, even download page)
 #jmol.sourceforge.net/download
