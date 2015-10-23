@@ -1,0 +1,38 @@
+load http://www.rcsb.org/pdb/files/1ZAA.pdb; #loads PDB structure 1ZAA
+background white; #sets the background to white (optional)
+backbone only; #shows only alpha carbon backbone
+backbone 1.0; #thickens backbone to 1Angstrom
+color structure; #colors the secondary structures
+restrict chain=C; #removes DNA - chains A & B, showing only Zinc Finger (ZIF268) - chain C
+select 201-203; spacefill; #displays Zn atoms (see the .pdb file for locations - hint: search HET & HETNAM within the file)
+select all; #reselect the structure
+select 3-30; color red; #colors residues 3-30 as red
+select arg80; spacefill 1.25; wireframe 1.0; #shows residue 80, an arginine (Arg80 or R80)
+select 80 and sidechain; color magenta; #colors the sidechain of residue 80 as magenta
+select arg80 and alpha; color green; #colors the alpha carbon of residue 80 as green
+select ile54; spacefill 1.25; wireframe 1.0; #shows residue 54, an isoleucine (Ile54 or I54)
+spacefill off; wireframe off; #removes the display of I54
+select cys40; spacefill 1.25; wireframe 1.0; #shows residue 40, a cysteine (Cys40 or C40)
+select 40 and sidechain; color [255,70,70]; #shows sidechain of C40 as pinkish, defined by RGB values (RGB = Red Green Blue)
+select 40 and alpha; color CPK; #shows alpha carbon of C40 in elemental coloring
+select all; #make sure to reselect everything
+calculate hbonds; #adds hydrogen bonds, everywhere
+hbonds 0.25; #thickens hydrogen bonds to 0.25A
+color hbonds [5,5,5]; #colors hydrogen bonds as black
+hide chain=C; #hides chain C
+display chain=C; #shows chain C (in console, "show chain" shows a list of possible chains)
+hide chain=A,B; #hide chains A & BNOTE: when opening the editor, remove the "<no data>" line before running
+
+#NOTES:
+# "#" starts comments, pieces of code that are not executed with commands
+# If you make a mistake, just do an undo, only works in the console (or from menu), not a script
+# Hovering over an atom shows the following: [residue name abbreviation, 3letters]residue position:atom:atom type #atom number.
+# Clicking on an atom displays this information AND the coordinates in the console window.
+# Measurements
+#	-click Tools from menu
+#	-select Distance Units & the unit desired (Nanometers 1nm=10^-9m, Angstroms 1A=10^-10m, or Picometers 1pm=10^-12m)
+#	-click the Ruler icon from menu (don't worry about the Measurements popup for now)
+#	-click the background of the structure
+#	-click a start point (some atom)
+#	-click an end point (some other atom)
+# The hashed line between the two points and the measurement displayed at its middle. This measurement also appears in the Measurements popup that we previously disregarded.
